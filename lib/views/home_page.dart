@@ -373,14 +373,16 @@ class _HomePageState extends State<HomePage> {
     Color color;
 
     if (winner == 'X' || winner == 'O') {
-      message = 'Winner is: ${gameMode == 'ai' ? 'AI' : winner}';
+      if (gameMode == 'ai') {
+        winner = winner == 'O' ? 'AI' : 'Human';
+      }
+      message = 'Winner is: $winner';
       icon = FontAwesomeIcons.trophy;
       color = winner == 'X' ? playerX : playerO;
     } else {
       message = "It's a Tie!";
-      icon = FontAwesomeIcons
-          .handshake; // Optional: change to something else if preferred
-      color = playerO; // Use a neutral color
+      icon = FontAwesomeIcons.handshake;
+      color = playerO;
     }
 
     return Padding(

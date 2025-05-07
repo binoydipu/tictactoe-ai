@@ -60,7 +60,6 @@ class _IntroScreenState extends State<IntroScreen> {
                   ),
                 ),
               ),
-              // Play button with pulse animation
               GestureDetector(
                 onTap: () => Navigator.push(
                   context,
